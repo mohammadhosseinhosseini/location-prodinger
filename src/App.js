@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
-import First from './First'
-import Second from './Second'
+// import First from './First'
+// import Second from './Second'
+import Map from './Map'
 
 const positions = [
     {
@@ -63,10 +64,11 @@ const positions = [
 function App() {
     return (
         <div className='container'>
-            <h1>First approach</h1>
+            {/* <h1>First approach</h1>
             <First positions={positions} />
             <h1 className='mb-5'>Second approach</h1>
-            <Second positions={positions} />
+            <Second positions={positions} /> */}
+            <Map positions={positions} />
         </div>
     )
 }

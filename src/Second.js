@@ -35,7 +35,7 @@ const Second = ({ positions }) => {
                             <div className='col-10 col-md-8'>
                                 <LocationInfo p={p} />
                             </div>
-                            {showMapIndex == index && (
+                            {showMapIndex === index && (
                                 <div
                                     style={{
                                         height: 600,

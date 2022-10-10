@@ -56,8 +56,8 @@ const First = ({ positions }) => {
                 />
                 {positions.map((p, index) => {
                     if (
-                        (p.filter == 1 && filter1) ||
-                        (p.filter == 2 && filter2)
+                        (p.filter === 1 && filter1) ||
+                        (p.filter === 2 && filter2)
                     )
                         return (
                             <Marker
