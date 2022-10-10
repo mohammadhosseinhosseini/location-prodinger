@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+## Description of How to implement your project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An npm package named `react-leaflet` has been used in this code sample. You can see the import statement in some files like this: `import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'` which imports components from this package to work with the map. The most important part of using this package is that you need to install `leaflet` package for `react-leaflet` package to work. You can use the script below to get started:
+
+### `yarn add leaflet react-leaflet` or `npm i leaflet react-leaflet`
+
+To implement the map, you need to use a certain URL from Open Street Map. You can see the code below. The URL here is `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`:
+
+```
+<TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    />
+```
+
+### Copyright
+
+Also, include the copyright disclaimer about OpenStreetMap in the `TileLayer` component.
 
 ## Available Scripts
 
