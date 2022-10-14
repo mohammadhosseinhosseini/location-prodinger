@@ -9,9 +9,6 @@ const Map = ({ positions }) => {
     const [map, setMap] = useState(null)
     const [filters, setFilters] = useState([])
     const [filtersDefault, setFiltersDefault] = useState([])
-
-    const [filter1, setFilter1] = useState(true)
-    const [filter2, setFilter2] = useState(true)
     const [showFilter, setShowFilter] = useState(true)
 
     useEffect(() => {
