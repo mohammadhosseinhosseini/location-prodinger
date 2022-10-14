@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import LocationInfo from './LocationInfo'
 import NavigateLink from './NavigateLink'
@@ -8,9 +7,27 @@ const defaultLocation = [51, 10]
 const defaultZoom = 5.5
 const Map = ({ positions }) => {
     const [map, setMap] = useState(null)
+    const [filters, setFilters] = useState([])
+    const [filtersDefault, setFiltersDefault] = useState([])
+
     const [filter1, setFilter1] = useState(true)
     const [filter2, setFilter2] = useState(true)
     const [showFilter, setShowFilter] = useState(true)
+
+    useEffect(() => {
+        setFilters(filtersDefault)
+    }, [showFilter])
+
+    useEffect(() => {
+        const onlyUnique = (value, index, self) => {
+            return self.indexOf(value) === index
+        }
+        const temp = positions
+            .map((position) => position.filter)
+            .filter(onlyUnique)
+        setFiltersDefault(temp)
+        setFilters(temp)
+    }, [])
 
     const handleShowAll = () => {
         setShowFilter(true)
@@ -20,42 +37,43 @@ const Map = ({ positions }) => {
     const handleShowPointOnMap = (position) => {
         setShowFilter(false)
         map.setView([position[0], position[1]], 12)
-        setFilter1(true)
-        setFilter2(true)
+        // setFilter1(true)
+        // setFilter2(true)
     }
+
+    // return <></>
 
     return (
         <div>
             {showFilter ? (
                 <div className='d-flex'>
-                    <div className='form-check form-switch me-3'>
-                        <input
-                            className='form-check-input'
-                            type='checkbox'
-                            id='filter-1'
-                            checked={filter1}
-                            onChange={() => {
-                                setFilter1((pre) => !pre)
-                            }}
-                        />
-                        <label className='form-check-label' htmlFor='filter-1'>
-                            Filter 1
-                        </label>
-                    </div>
-                    <div className='form-check form-switch'>
-                        <input
-                            className='form-check-input'
-                            type='checkbox'
-                            id='filter-2'
-                            checked={filter2}
-                            onChange={() => {
-                                setFilter2((pre) => !pre)
-                            }}
-                        />
-                        <label className='form-check-label' htmlFor='filter-2'>
-                            Filter 2
-                        </label>
-                    </div>
+                    {filtersDefault.map((filter) => (
+                        <div className='form-check form-switch me-3'>
+                            <input
+                                className='form-check-input'
+                                type='checkbox'
+                                id='filter-1'
+                                checked={filters.includes(filter)}
+                                onChange={() => {
+                                    setFilters((pre) => {
+                                        if (pre.includes(filter)) {
+                                            return pre.filter(
+                                                (item) => item !== filter
+                                            )
+                                        } else {
+                                            return [...pre, filter]
+                                        }
+                                    })
+                                }}
+                            />
+                            <label
+                                className='form-check-label'
+                                htmlFor='filter-1'
+                            >
+                                {filter}
+                            </label>
+                        </div>
+                    ))}
                 </div>
             ) : (
                 <button className='btn btn-primary' onClick={handleShowAll}>
@@ -80,10 +98,7 @@ const Map = ({ positions }) => {
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                 />
                 {positions.map((p, index) => {
-                    if (
-                        (p.filter === 1 && filter1) ||
-                        (p.filter === 2 && filter2)
-                    )
+                    if (filters.includes(p.filter))
                         return (
                             <Marker
                                 key={index}
@@ -98,23 +113,41 @@ const Map = ({ positions }) => {
                     else return null
                 })}
             </MapContainer>
-            <div
-                className='row row-cols-1 row-cols-md-2 row-cols-lg-3'
-                style={{ position: 'relative' }}
-            >
-                {positions.map((p, index) => (
-                    <div className='row col mb-5' key={index}>
-                        <div className='col-2 col-md-4 text-center'>
-                            <i
-                                className='bi bi-map'
-                                style={{ fontSize: 40, cursor: 'pointer' }}
-                                onClick={() => {
-                                    handleShowPointOnMap(p.position)
-                                }}
-                            ></i>
-                        </div>
-                        <div className='col-10 col-md-8'>
-                            <LocationInfo p={p} />
+            <div>
+                {filtersDefault.map((filter) => (
+                    <div>
+                        <h2>{filter}</h2>
+                        <div
+                            className='row row-cols-1 row-cols-md-2 row-cols-lg-3'
+                            style={{ position: 'relative' }}
+                        >
+                            {positions.map(
+                                (p, index) =>
+                                    p.filter === filter && (
+                                        <div
+                                            className='row col mb-5'
+                                            key={index}
+                                        >
+                                            <div className='col-2 col-md-4 text-center'>
+                                                <i
+                                                    className='bi bi-map'
+                                                    style={{
+                                                        fontSize: 40,
+                                                        cursor: 'pointer',
+                                                    }}
+                                                    onClick={() => {
+                                                        handleShowPointOnMap(
+                                                            p.position
+                                                        )
+                                                    }}
+                                                ></i>
+                                            </div>
+                                            <div className='col-10 col-md-8'>
+                                                <LocationInfo p={p} />
+                                            </div>
+                                        </div>
+                                    )
+                            )}
                         </div>
                     </div>
                 ))}
