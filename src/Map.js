@@ -4,6 +4,8 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import LocationInfo from './LocationInfo'
 import NavigateLink from './NavigateLink'
 
+const defaultLocation = [51, 10]
+const defaultZoom = 5.5
 const Map = ({ positions }) => {
     const [map, setMap] = useState(null)
     const [filter1, setFilter1] = useState(true)
@@ -12,13 +14,16 @@ const Map = ({ positions }) => {
 
     const handleShowAll = () => {
         setShowFilter(true)
-        map.setView([51, 10], 5.5)
+        map.setView(defaultLocation, defaultZoom)
     }
 
     const handleShowPointOnMap = (position) => {
-        map.setView([position[0], position[1]], 12)
         setShowFilter(false)
+        map.setView([position[0], position[1]], 12)
+        setFilter1(true)
+        setFilter2(true)
     }
+
     return (
         <div>
             {showFilter ? (
@@ -59,8 +64,8 @@ const Map = ({ positions }) => {
             )}
 
             <MapContainer
-                center={[51, 10]}
-                zoom={5.5}
+                center={defaultLocation}
+                zoom={defaultZoom}
                 scrollWheelZoom={false}
                 ref={setMap}
                 style={{
