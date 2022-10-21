@@ -1,0 +1,174 @@
+[
+    {
+        "position": [
+            50.996255,
+            11.09045
+        ],
+        "name": "Coburg",
+        "address_1": "Rosenauer Strasse 115",
+        "address_2": "D-96450 Coburg",
+        "phone": "+49 (0) 9561 851-0",
+        "fax": "+49 (0) 9561 851-100",
+        "email": "coburg@prodinger.de",
+        "filter": "Firmenzentrale"
+    },
+    {
+        "position": [
+            50.996255,
+            11.09045
+        ],
+        "name": "Coburg",
+        "address_1": "Rosenauer Strasse 115",
+        "address_2": "D-96450 Coburg",
+        "phone": "+49 (0) 9561 851-0",
+        "fax": "+49 (0) 9561 851-100",
+        "email": "coburg@prodinger.de",
+        "filter": "Büro- und Lagerstandorte"
+    },
+    {
+        "position": [
+            50.275875,
+            10.980706
+        ],
+        "name": "Erfurt",
+        "address_1": "Fichtenweg 48",
+        "address_2": "D-99098 Erfurt",
+        "phone": "+49 (0) 36203 697-0",
+        "fax": "+49 (0) 36203 697-97",
+        "email": "erfurt@prodinger.de",
+        "filter": "Büro- und Lagerstandorte"
+    },
+    {
+        "position": [
+            48.229969,
+            7.7641863
+        ],
+        "name": "Herbolzheim",
+        "address_1": "Hans-Prodinger-Platz 1",
+        "address_2": "D-79336 Herbolzheim",
+        "phone": "+49 (0) 7643 23 28-0",
+        "fax": "+49 (0) 7643 23 28-500",
+        "email": "herbolzheim@prodinger.de",
+        "filter": "Büro- und Lagerstandorte"
+    },
+    {
+        "position": [
+            49.4464966,
+            11.013524
+        ],
+        "name": "Nürnberg",
+        "address_1": "Flachslander Straße 15",
+        "address_2": "D-90431 Nürnberg",
+        "phone": "+49 (0) 911 65704-0",
+        "filter": "Büro- und Lagerstandorte"
+    },
+    {
+        "position": [
+            50.4453901,
+            10.89127
+        ],
+        "name": "Außenlager Brattendorf",
+        "address_1": "Eichenstraße 1",
+        "address_2": "D-98673 Auengrund OT\nBrattendorf",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            50.8684001,
+            6.7578367
+        ],
+        "name": "Außenlager Kerpen",
+        "address_1": "Alfred-Nobel-Straße 81-91",
+        "address_2": "D-50169 Kerpen",
+        "phone": "+49 2237 979116 600",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            50.208788,
+            11.3007192
+        ],
+        "name": "Außenlager Kronach",
+        "address_1": "Hummendorfer Straße 72-74",
+        "address_2": "D-96317 Kronach-Neuses",
+        "phone": "+49 (0) 95 61/85 13 22",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            50.15682,
+            11.11631
+        ],
+        "name": "Außenlager Michelau",
+        "address_1": "Bahnhofstraße 21",
+        "address_2": "D-96247 Michelau",
+        "phone": "+49 (0) 95 62/5 02 19",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            50.3144678,
+            11.1154909
+        ],
+        "name": "Außenlager Neustadt bei Coburg",
+        "address_1": "Austraße 101 b | MCC\nGewerbepark",
+        "address_2": "D-96465 Neustadt bei Coburg",
+        "phone": "+49 (0) 95 61/85 13 26",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            50.3609835,
+            11.4839657
+        ],
+        "name": "Außenlager Nordhalben",
+        "address_1": "Regberger Weg 2",
+        "address_2": "D-96365 Nordhalben",
+        "phone": "+49 (0) 92 67/91 45 06",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            50.2764972,
+            11.0901065
+        ],
+        "name": "Außenlager Rödental",
+        "address_1": "Lange Äcker 2",
+        "address_2": "D-96472 Rödental OT\nBlumenrod",
+        "phone": "+49 (0) 95 68/3 00 17 15",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            47.641426,
+            7.7256543
+        ],
+        "name": "Außenlager Steinen",
+        "address_1": "Egertenweg 6",
+        "address_2": "D-79585 Steinen",
+        "phone": "+49 (0) 7643 2328-900",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            49.9069583,
+            12.1984825
+        ],
+        "name": "Außenlager Wiesau",
+        "address_1": "Logistikstraße 1\n(Zufahrt über Tonwerkstraße)",
+        "address_2": "D-95676 Wiesau",
+        "phone": "+49 (0) 96 36/92 09 37 00",
+        "filter": "Zusätzliche Lagerstandorte"
+    },
+    {
+        "position": [
+            49.8044634,
+            12.1883597
+        ],
+        "name": "Außenlager Windischeschenbach",
+        "address_1": "Am Gewerbepark 20",
+        "address_2": "D-92670 Windischeschenbach",
+        "phone": "+49 (0) 9681-918740",
+        "filter": "Zusätzliche Lagerstandorte"
+    }
+]
